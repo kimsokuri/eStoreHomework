@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+       <!-- 하나의 페이지를 만드는것이라 보면 돼 -->
+<tiles-definitions>
+<!-- layout.jsp라는 템플릿을 사용할것이고, attribute로 -->
+<!-- 
+		<tiles:insertAttribute name ="title"></tiles:insertAttribute>
+		<tiles:insertAttribute name ="menu"></tiles:insertAttribute>
+		<tiles:insertAttribute name ="body"></tiles:insertAttribute>
+		<tiles:insertAttribute name ="footer"></tiles:insertAttribute>
+ -->
+  <definition name="base" template="/WEB-INF/templates/layout.jsp">
+    <put-attribute name="title" value="소쿠리의 eStore" />
+    <put-attribute name="menu" value="/WEB-INF/templates/menu.jsp" />
+    <put-attribute name="footer" value="/WEB-INF/templates/footer.jsp" />
+  </definition>
+  
+  <!-- base 정의를 상속받아.  -->
+    <definition name="home" extends="base">
+    <put-attribute name="title" value="소쿠리의 eStore-[메인 홈]" /> <!-- title 재정의 -->
+    <put-attribute name="body" value="/WEB-INF/views/home.jsp" /> 
+  </definition>
+  
+   <!-- base 정의를 상속받아.  -->
+  <definition name="products" extends="base">
+    <put-attribute name="title" value="소쿠리의 eStore-[상품 페이지]" /> <!-- title 재정의 -->
+    <put-attribute name="body" value="/WEB-INF/views/products.jsp" /> 
+  </definition>
+  
+   <!-- base 정의를 상속받아.  -->
+  <definition name="admin" extends="base">
+    <put-attribute name="title" value="소쿠리의 eStore-[관리자 모드 : 홈]" /> <!-- title 재정의 -->
+    <put-attribute name="body" value="/WEB-INF/views/admin.jsp" /> 
+  </definition>
+
+   <!-- base 정의를 상속받아.  -->
+  <definition name="productInventory" extends="base">
+    <put-attribute name="title" value="소쿠리의 eStore-[관리자 모드 : productInventory]" /> <!-- title 재정의 -->
+    <put-attribute name="body" value="/WEB-INF/views/productInventory.jsp" /> 
+  </definition>
+  
+     <!-- base 정의를 상속받아.  -->
+  <definition name="addProduct" extends="base">
+    <put-attribute name="title" value="소쿠리의 eStore-[관리자 모드 : Add Product]" /> <!-- title 재정의 -->
+    <put-attribute name="body" value="/WEB-INF/views/addProduct.jsp" /> 
+  </definition>
+  
+       <!-- base 정의를 상속받아.  -->
+  <definition name="updateProduct" extends="base">
+    <put-attribute name="title" value="소쿠리의 eStore-[관리자 모드 : Update Product]" /> <!-- title 재정의 -->
+    <put-attribute name="body" value="/WEB-INF/views/updateProduct.jsp" /> 
+  </definition>
+  
+         <!-- base 정의를 상속받아.  -->
+  <definition name="login" extends="base">
+    <put-attribute name="title" value="소쿠리의 eStore-[login page]" /> <!-- title 재정의 -->
+    <put-attribute name="body" value="/WEB-INF/views/login.jsp" /> 
+  </definition>
+  
+  <!-- base 정의를 상속받아.  -->
+  <definition name="viewProduct" extends="base">
+    <put-attribute name="title" value="소쿠리의 eStore-[상품 상세 페이지]" /> <!-- title 재정의 -->
+    <put-attribute name="body" value="/WEB-INF/views/viewProduct.jsp" /> 
+  </definition>
+  
+</tiles-definitions>
